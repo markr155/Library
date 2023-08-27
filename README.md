@@ -4,6 +4,6 @@ Library app
 
 <!-- 2. set up empty array, book constructor -->
 
-3. add book to library function
+<!-- 3. add book to library function -->
 
-4. display book function
+<!-- 4. display book function -->
