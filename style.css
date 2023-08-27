@@ -8,7 +8,7 @@ body {
     align-items: center;
 }
 
-button {
+.newButton {
     margin-bottom: 10px;
 }
 
@@ -25,14 +25,10 @@ button {
     "tLabel tInput"
     "aLabel aInput"
     "pLabel pInput"
-    "rLabel rInput";
+    "rLabel rInput"
+    "addForm closeForm";
     align-items: center;
     gap: 10px;   
-}
-
-.dialogForm button {
-    width: 80px;
-    justify-self: center;
 }
 
 .dialogForm p{
@@ -62,4 +58,14 @@ button {
 }
 #read {
     grid-area: rInput;
+}
+#add {
+    grid-area: addForm;
+    width: 80px;
+    justify-self: center;
+}
+#formClose {
+    grid-area: closeForm;
+    width: 80px;
+    justify-self: center;
 }

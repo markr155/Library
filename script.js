@@ -8,7 +8,7 @@ function Book(title, author, pages, read) {
 };
 
 
-function addBookToLibrary() {
+function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 }
@@ -30,8 +30,35 @@ function displaysArray() {
 const modalButton = document.querySelector('.newButton');
 const dialog = document.querySelector('.bookDialog');
 const table = document.querySelector('.library');
+const addForm = document.querySelector(".dialogForm");
+const addFormButton = document.querySelector("#add");
 
 modalButton.addEventListener('click', () => {dialog.showModal();});
+
+addFormButton.addEventListener('click', () => {
+    let hasread = "";
+    if (addForm.read.checked == true){
+        hasread = 'yes'
+    }else {
+        hasread = 'no'
+    };
+    //prevents null entry
+    if (addForm.title.value == "" && addForm.author.value == "" && addForm.pages.value == ""){
+        alert("Add information to add a book");
+        event.preventDefault();
+        return;
+    }
+
+    addBookToLibrary(addForm.title.value, addForm.author.value, addForm.pages.value, hasread);
+    displaysArray();
+    //reset form
+    addForm.title.value = "";
+    addForm.author.value = "";
+    addForm.pages.value = "";
+    addForm.read.checked = false;
+
+})
+
 
 const hobbit = new Book('The Hobbit', 'JRR Tolkien', '290', 'yes');
 
