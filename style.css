@@ -11,3 +11,55 @@ body {
 button {
     margin-bottom: 10px;
 }
+
+.bookDialog {
+    max-width: 50%;
+}
+
+.dialogForm {
+    display: grid;
+    grid-template-rows: repeat(6, 30px);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "head head"
+    "tLabel tInput"
+    "aLabel aInput"
+    "pLabel pInput"
+    "rLabel rInput";
+    align-items: center;
+    gap: 10px;   
+}
+
+.dialogForm button {
+    width: 80px;
+    justify-self: center;
+}
+
+.dialogForm p{
+    grid-area: head;
+    justify-self: center;
+}
+#titleLabel {
+    grid-area: tLabel;
+}
+#title {
+    grid-area: tInput;
+}
+#authorLabel {
+    grid-area: aLabel;
+}
+#author {
+    grid-area: aInput;
+}
+#pagesLabel {
+    grid-area: pLabel;
+}
+#pages {
+    grid-area: pInput;
+}
+#readLabel {
+    grid-area: rLabel;
+}
+#read {
+    grid-area: rInput;
+}
