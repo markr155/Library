@@ -13,16 +13,29 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
+function deleteBook() {
+
+}
+
 function displaysArray() {
     while (table.childElementCount > 1){table.removeChild(table.lastChild)};
-    myLibrary.forEach(book => {
+    myLibrary.forEach((book, index) => {
         const newRow = document.createElement('tr');
+        newRow.dataset.index = index;
+        //add cell for each book property   
         for (key in book) {
             const newCell = document.createElement('td');
             newCell.textContent = book[key];
             newRow.appendChild(newCell);
         }
+        //delete button
+        const delBtn = document.createElement('button');
+        delBtn.setAttribute("class", "delBtn")
+        delBtn.addEventListener('click', deleteBook);
+        delBtn.textContent = 'Delete';
+        newRow.appendChild(delBtn);
         table.appendChild(newRow);
+
     })
 }
 
