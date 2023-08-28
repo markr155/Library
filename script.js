@@ -14,7 +14,9 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function displaysArray() {
+    //resets table
     while (table.childElementCount > 1){table.removeChild(table.lastChild)};
+    //adds array
     myLibrary.forEach(book => {
         const newRow = document.createElement('tr');
         for (key in book) {
