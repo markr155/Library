@@ -14,8 +14,11 @@ Library app
 
 <!-- 7. add remove book button -->
 
-8. change read status to a button
+<!-- 8. change read status to a button -->
 
-To Do
-Add book form input validation
-table styling
+basic functionality complete
+
+to do
+
+zero styling 
+book form further validation
