@@ -13,18 +13,32 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
+function deleteBook() {
+    let index = this.parentElement.dataset.index;
+    myLibrary.splice(index, 1);
+    displaysArray();
+}
+
 function displaysArray() {
     //resets table
     while (table.childElementCount > 1){table.removeChild(table.lastChild)};
-    //adds array
-    myLibrary.forEach(book => {
+    myLibrary.forEach((book, index) => {
         const newRow = document.createElement('tr');
+        newRow.dataset.index = index;
+        //add cell for each book property   
         for (key in book) {
             const newCell = document.createElement('td');
             newCell.textContent = book[key];
             newRow.appendChild(newCell);
         }
+        //delete button
+        const delBtn = document.createElement('button');
+        delBtn.setAttribute("class", "delBtn")
+        delBtn.addEventListener('click', deleteBook);
+        delBtn.textContent = 'Delete';
+        newRow.appendChild(delBtn);
         table.appendChild(newRow);
+
     })
 }
 
@@ -70,4 +84,5 @@ const dictionary = new Book('Oxford Dictionary', 'Oxford', 3000, 'yes');
 
 myLibrary.push(hobbit);
 myLibrary.push(bible);
-myLibrary.push(dictionary)
+myLibrary.push(dictionary);
+displaysArray();
