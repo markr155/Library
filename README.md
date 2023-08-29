@@ -12,7 +12,7 @@ Library app
 
 <!-- 6. add book form functionality -->
 
-7. add remove book button
+<!-- 7. add remove book button -->
 
 8. change read status to a button
 

@@ -14,7 +14,9 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function deleteBook() {
-
+    let index = this.parentElement.dataset.index;
+    myLibrary.splice(index, 1);
+    displaysArray();
 }
 
 function displaysArray() {
@@ -81,4 +83,5 @@ const dictionary = new Book('Oxford Dictionary', 'Oxford', 3000, 'yes');
 
 myLibrary.push(hobbit);
 myLibrary.push(bible);
-myLibrary.push(dictionary)
+myLibrary.push(dictionary);
+displaysArray();
