@@ -1,15 +1,53 @@
-table, th, td {
-    border: 1px solid black;
+:root {
+    --header-bg: #3498db;
+    --header-text: #fff;
+    --bg-colour: #ecf0f1;
+    --main-text-colour: #333333;
+    --accent-colour: rgb(255, 74, 3, 0.5);
+    --border-colour: #bdc3c7;
+}
+
+.library {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid var(--border-colour);
+    padding: 0.5rem;
+}
+
+th {
+    background: var(--header-bg);
+    color: var(--header-text);
+}
+
+header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
 }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-colour);
+    color: var(--main-text-colour);
 }
 
-.testButton {
-    margin-bottom: 10px;
+.button-container {
+    margin: 1rem 0;
+}
+
+button {
+    border: none;
+    background: var(--accent-colour);
 }
 
 .bookDialog {
